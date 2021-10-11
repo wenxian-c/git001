@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Title</title>
+    <script>
+       
+       //TODO step1:数组解构
+        let [a, b, c] = [1, 2, 3];
+        console.log(a, b, c);
+        
+        //TODO step2:数组嵌套
+        var [a2, [b2, c2]] = [1, [2, 3]];
+        console.log(a2, b2, c2);
+        var [a3,[b3,c3],d3] = [1,[2,3],4];
+
+        //TODO step3:允许空缺变量名
+        let [,,c4] = [,,3];
+        console.log(c3);
+
+        //TODO step4:允许空缺值，来赋值为undefined
+        let [a5,b5,c5] = [5,,6];
+        console.log(a5,b5,c5);
+
+        //TODO step:错误使用
+        /* let [foo] = 1;
+        let [foo] = false;
+        let [foo] = NaN;
+        let [foo] = undefined;
+        let [foo] = null;
+        let [foo] = {}; */
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

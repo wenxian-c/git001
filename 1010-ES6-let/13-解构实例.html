@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Title</title>
+    <script>
+       
+        let a = 1;
+        let b = 2;
+
+       //1、数据交换
+       [a, b] = [b, a];
+       console.log(a, b);
+        
+
+
+        //2、提取JSON
+        let json = {
+            id: 1,
+            status: 2,
+            data: [1001, 1002]
+        };
+        //--传统写法
+        /* 
+        var id = json.id;
+        var status = json.status;
+        var data = json.status; 
+        */
+
+        //对象解构赋值
+        let {id, status, data} = json;
+        console.log(id, status, data);
+
+        /*  
+        面试题： 如果快速提取多层json数据，使用解构赋值；
+        */
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

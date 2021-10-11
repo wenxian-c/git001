@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Title</title>
+    <script>
+       
+       /* 
+       对象结构
+       */
+
+       let {a, b} = {a:'1', b:'2'};
+       console.log(a, b);
+
+        //如果结构不成功，为undefined
+        let {c} = {a:'aaa', b:'bbb'};
+        console.log(c);
+
+        /* 
+        null 不严格等于undefined
+        */
+
+        let{d} = {};
+        let{e} = {e:null};
+        let{f} = {undefined};
+        console.log(d, e, f);//undefined null undefined
+
+        //TODO step1:改变量名
+        let {a:name} = {a:'aaa', b:'bbb'};
+        console.log(name);
+        /* 
+        let {a:a, b:b} = {a:'aaa', b:'bbb'};
+        如果同名可省略
+        let {a, b} = {a:'aaa', b:'bbb'};
+        */
+
+        console.log('=======');
+
+        let arr = [1, 2, 3, 4];
+        console.log(arr);
+        //let {length} = {length: 4};
+        let {length} = arr;
+        console.log(length);
+
+        //取值
+        let{0:a2, [arr.length - 1]:b2} = arr;
+        console.log(a2, b2);
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
