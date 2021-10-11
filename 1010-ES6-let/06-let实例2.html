@@ -10,6 +10,7 @@
 <button>btn-3</button>
 <button>btn-4</button>
 <button>btn-5</button>  
+
 <script>
     /*
     给每个按钮绑定事件，打印当前按钮的索引
@@ -17,14 +18,19 @@
     //TODO step1: 获取按钮
     var btns = document.querySelectorAll('button');
     //TODO step2:绑定事件
-    for(let i = 0; i < btns.length; i++){
-        var btn = btns[i];
-        btn.onclick = function () {
-            console.log(i);
+    for(var i = 0; i < btns.length; i++){
+       ( function (index){
+            var btn = btns[index];
+            btn.onclick = function () {
+            console.log(index);
 
-        }
-
+            }
+        })(i);
+        
     }
+
+
+
 
     
 

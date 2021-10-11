@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Title</title>
+    <script>
+        /* 
+        let命令
+        1.块级作用域（区分：全局变量和局部变量）只有在{}花括号内有效，与function无关！
+        2.不存在变量作用域提升,使用let必须先声明再提升
+        3.不允许重复声明
+        4.暂时性死区
+        5.全局变量与windows没有关系,严格区分window对象与全局对象
+         */
+        
+        var a = 1;//全局变量
+        console.log(window.a);//1
+        function fn() {
+            console.log('hello');
+        }
+        window.fn();//hello
+        /* 
+        全局变量就是windows的属性，全局方法就是windows的方法
+         */
+
+        let b = 3;
+        console.log(window.b);//undfiend
+        
+        var o = {};
+        console.log(o.name);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

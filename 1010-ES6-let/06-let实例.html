@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button>btn-1</button>      
+<button>btn-2</button>
+<button>btn-3</button>
+<button>btn-4</button>
+<button>btn-5</button>  
+<hr>
+<button class="test">btn-1</button>      
+<button class="test">btn-2</button>
+<button class="test">btn-3</button>
+<button class="test">btn-4</button>
+<button class="test">btn-5</button>
+
+
+<script>
+    /*
+    给每个按钮绑定事件，打印当前按钮的索引
+     */
+    //TODO step1: 获取按钮
+    var btns = document.querySelectorAll('button');
+    //TODO step2:绑定事件
+    for(var i = 0; i < btns.length; i++){
+        var btn = btns[i];
+        btn.onclick = function () {
+            console.log(i);
+
+        }
+    }
+    console.log(i);
+
+
+
+
+    var btns2 = document.querySelectorAll('.test');
+    for(let j = 0; j < btns2.length; j++){
+        var btn2 = btns2[j];
+        btn2.onclick = function () {
+            console.log(j);
+
+        }
+
+    }
+
+    
+
+</script>
+</body>
+</html>

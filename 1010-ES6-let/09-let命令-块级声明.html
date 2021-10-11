@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Title</title>
+    <script>
+        /* 
+        let命令
+        1.块级作用域（区分：全局变量和局部变量）只有在{}花括号内有效，与function无关！
+        2.不存在变量作用域提升,使用let必须先声明再提升
+        3.不允许重复声明
+        4.暂时性死区
+        5.全局变量与windows没有关系,严格区分window对象与全局对象
+        6.块级声明
+        */
+        
+        
+        //ES5严格模式
+        "use strict";
+        {
+            function test(){
+                console.log('test');
+            }
+        }
+
+        test();//test is not defined
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

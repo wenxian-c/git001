@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Title</title>
+    <script>
+        /* 
+        const命令
+        1.常量值一旦声明不可改变，一般定义常量全部用大写（开发规范）
+        2.不可重复声明
+        3.声明必须赋值，防止意外发生
+        4.先声明在使用，作用域和let一样
+        5.对象常量，内容可变，引用地址不变
+        6.冻结常量对象
+        */
+        
+        //1.常量值一旦声明不可改变，一般定义常量全部用大写（开发规范）
+        const A = 12;
+        console.log(A);
+
+        //2.不可重复声明
+        //const A = 15;//Identifier 'A' has already been declared
+
+        //3.声明必须赋值，防止意外发生
+        //const B;//未赋值
+
+        //4.先声明在使用，作用域和let一样
+        /* if(true) {
+            const C = 20;
+            console.log(C);
+        }
+        console.log(C); */
+
+        //5.对象常量，内容可变，引用地址不变
+        const USER = {name:'Tim', age:1};
+        console.log(USER.name,USER.age);
+        //USER = {name:'zhangsan'};//Assignment to constant variable.
+        USER.name = 'zhangsan';
+        console.log(USER.name, USER.age);
+
+        USER.show = 'xiaoming';
+        console.log(USER);
+
+        console.log('================')
+
+        //冻结常量freeze()
+        const USER2 = Object.freeze({name:'Tim', age:1});
+        console.log(USER2.name);
+        USER2.name = 'xiaoqibao';
+        console.log(USER2.name);
+
+        USER2.show = 'xiaoming';
+        console.log(USER2);
+
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

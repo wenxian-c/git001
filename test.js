@@ -1,11 +1,8 @@
-var btns = document.querySelectorAll('button');
-for (var i = 0; i < btns.length; i++) {
-
-    (function(index){
-        var btns = btns[index];
-        btns.onclick = function (){
-            console.log(index);
-        }
-    })(i);
-
+var a = [];
+for (let i = 0; i < 10; i++) {
+    let b =1;
+  a[i] = function () {
+    console.log(i);
+  };
 }
+a[6]();
