@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /* 
+        let命令
+        1.块级作用域（区分：全局变量和局部变量）只有在{}花括号内有效，与function无关！
+         */
+        // var a = 1;
+        // let b = 2;
+        if(true){
+            var a = 1;
+            let b = 2;
+            console.log(b);
+        }
+        console.log(a);
+        //console.log(b);
+
+        /* 
+        区分：全局变量与局部变量
+        在function中是否使用var声明！！
+        */
+
+        var age = 12;
+        let name = 'Tim';
+
+        if(true){
+
+            console.log(age, name);
+        }
+
+        
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
