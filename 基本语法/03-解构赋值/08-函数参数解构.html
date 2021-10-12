@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Title</title>
+    <script>
+       
+        //传统写法
+        function fn1(a, b) {
+            console.log(a, b);
+        }
+        fn1(1, 2);
+
+        //ES6写法
+        function fn2([a, b]) {
+            console.log(a, b);
+        }
+        fn2([3, 4]);
+
+        console.log('-------');
+
+        //函数默认值
+        function fn3(a, b) {
+            a = a || 1;
+            b = b || 2;
+            console.log(a, b);
+        }
+        fn3();
+
+        function fn4([a=1, b=2]) {
+            console.log(a, b);
+        }
+        fn4([3]);
+
+        console.log('--------');
+
+        //使用对象方式的默认值
+        function ajax(params) {
+            var initDefault = {
+                async : true,
+                type : 'get',
+                success : function() {}
+            };
+            //参数合并
+            for (var k in params) {
+                initDefault[k] = params[k];
+            }
+            console.log(initDefault);
+        }   
+        ajax({async:false, type:'push', });
+
+        //ES6改造版
+        function ajax2({async=true, type='get', success=function(){}}) {
+            console.log(async, type, success);
+        }
+        ajax2({async:false, type:'post', });
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

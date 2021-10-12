@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Title</title>
+    <script>
+       
+        //a的默认值是1， b的默认值是2
+        let [a = 1, b = 2] = [3];
+        //数组不完全解构，a被重新赋值为3
+        console.log(a, b);
+
+        // null !== undefined
+        //let [a2=1, b2=3] = [3, null]; //a2=3,  b2=null
+
+        console.log('---------');
+
+        /* 
+        在等号右边只要是undefined，左边就取默认值
+         */
+        //let [a2 = 1, b2 = 2] = [3];
+        //let [a2 = 1, b2 = 2] = [3,]; //a2=3,  b2=2
+        let [a2 = 1, b2 = 2] = [3, undefined]; // a2=3, b2=2
+        console.log(a2, b2);
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

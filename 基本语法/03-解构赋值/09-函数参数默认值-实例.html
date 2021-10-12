@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Title</title>
+    <script>
+       
+        //改造版 ={}
+        function ajax2({async=true, type='get', success=function(){}} = {}) {
+            console.log(async, type, success);
+        }
+        ajax2();
+        ajax2({type:'post'});
+
+
+        console.log('------');
+
+
+        function move({x, y} = {x:0, y:0}) {
+            console.log(x, y);
+        }
+        move();
+        move({x:1});//1 undefined
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
