@@ -1,0 +1,40 @@
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Title</title>
+    <script>
+        
+        /* 
+        1. for （常用）
+        2. while
+        3. do...while
+        4. for...in 遍历对象
+
+        新的遍历的方法： ES6新增，最强的方法
+        5. for...of
+        */
+        
+        var s = "𠮷a";
+        //错误
+        for (let i = 0; i < s.length; i++) {
+            console.log(s[i]);
+        }
+
+        console.log('--------');
+
+        //使用for...of 正确
+        for (let i of s) {
+            console.log(i);
+        }
+
+
+       
+    </script>
+</head>
+<body>
+
+</body>
+</html>

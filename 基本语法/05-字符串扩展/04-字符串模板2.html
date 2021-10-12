@@ -1,0 +1,49 @@
+
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Title</title>
+    <script>
+        
+        //如果字符串模板，跟在一个方法后边！会自动调用该方法
+
+        var a = 15;
+        var b = 100;
+        tag`Hello ${a + b}world ${a * b}`;
+
+        /* 
+        第一个参数：为数组['Hello', 'World', '']
+        该数组的成员是模板字符串中那些没有变量替换的部分
+        第二个参数：115
+        变量替换只发生在数组的第一个成员与第二个成员之间
+        第三个参数：1500
+        变量替换只发生在数组的第二个成员与第三个成员之间
+        */
+
+        function tag(stringArr, value1, value2) {
+            console.log(stringArr[0]); //Hello 
+            console.log(stringArr[1]); //world 
+            console.log(stringArr[2]); //
+            console.log(value1); //115
+            console.log(value2); //1500
+            console.log("OK");
+        }
+
+
+        //String.raw:避免转义
+        console.log(`Hi\n${2+3}！`);
+        console.log(String.raw`Hi\n${2+3}！`);
+
+        console.log(`Hi\u000A`);
+        console.log(String.raw`Hi\u000A`);
+
+       
+    </script>
+</head>
+<body>
+
+</body>
+</html>

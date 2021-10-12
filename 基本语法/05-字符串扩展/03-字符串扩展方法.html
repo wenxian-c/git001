@@ -1,0 +1,47 @@
+
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Title</title>
+    <script>
+        
+        var s = "shang hai";
+
+        //ES5
+        //判断是否有指定字符
+        //判断是否以指定字符串开头（shang）
+        //判断是否以指定字符串结尾
+        console.log(s.indexOf('a') > -1);
+        console.log(s.indexOf('shang') == 0);
+
+        console.log('--------')
+
+        //includes() startsWith() endsWith()
+        console.log(s.includes('a')); //true
+        console.log(s.startsWith('shang')); //true
+        console.log(s.endsWith('hai')); //true
+
+        var s = 'sxt laopei!';
+        console.log(s.startsWith('sxt')); //true
+        console.log(s.endsWith('!')); //true
+        console.log(s.includes('o')); //true
+
+        console.log('---------')
+
+        //构造：repeat()  
+        'hello'.repeat(5)
+        console.log('hello'.repeat(5)); //hellohellohellohellohello
+
+
+
+
+       
+    </script>
+</head>
+<body>
+
+</body>
+</html>

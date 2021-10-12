@@ -1,0 +1,52 @@
+
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Title</title>
+    <script>
+        
+        /* 
+        定义字符串模板：使用 反单引号``
+        1. 在模板字符串中可以直接引用变量：${变量名}
+        2. 在取值中可以做计算
+        3. 可以调用方法
+        4. 支持换行，空格和换行都会保留
+        */
+
+        var text = 'Hello';
+        var num = 9998;
+        function greet() {
+            return  "My Great!!";
+        }
+
+        var str = 'Hello World'; //普通字符串
+        var str1 = '    Hello' +
+            'Wolrd    你好';
+
+        //模板字符串
+        var tql = `Hello ${num} world`; //获取变量
+        var tql1 = `Hello ${num - 1000} world`; //计算
+        var tql2 = `Hello ${greet()} world`; //调用方法
+        var tql3 = `    Hello
+             Wolrd    你好`; //支持换行
+
+        console.log(tql);
+        console.log(tql1);
+        console.log(tql2);
+        console.log(str1);
+        console.log(tql3);
+
+
+
+
+
+       
+    </script>
+</head>
+<body>
+
+</body>
+</html>
