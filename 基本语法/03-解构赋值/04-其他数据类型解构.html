@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Title</title>
+    <script>
+       
+        //字符串转换成一个类似数组的对象
+        let [a, b, c, d, e] = 'rtyui';
+        console.log(a, b, c, d, e);//r t y u i
+
+
+        let {length: len} = 'rtyui';
+        console.log(len);//5
+
+
+        //数字解构
+        let {toString} = 123;
+        console.log(toString);
+        //console.log(toString());
+        console.log(toString === Number.prototype.toString);
+
+        //举个例子
+        //var num = 123;
+        //console.log(num, num.toString());
+
+
+        //布尔值解构
+        let {toString: s} = true;
+        console.log(s);
+
+        console.log('=======');
+        /*  
+        解构赋值的规则是，只要等号右边的值不是对象或数组，就将其转为对象。
+        由于null和undefined无法转为对象，多以对他们进行解构赋值，都会报错。
+        */
+        let { prop: x } = {};
+        console.log(x);
+        //let { prop: x } = undefined;//Cannot destructure property 'prop' of 'undefined' as it is undefined.
+        //let { prop: x } = null;Cannot destructure property 'prop' of 'null' as it is null.
+
+        
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

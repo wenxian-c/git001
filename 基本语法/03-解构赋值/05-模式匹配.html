@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Title</title>
+    <script>
+       
+        //两边模式相同即可
+        //数组嵌套匹配
+        var [a, [b, c], [d]] = [100, [200, 300], 400];
+
+        //数组对象混合匹配
+        var[{a, b}, c] = [{a :100, b :200}, 300];
+        
+        //注意：赋值的内容必须是一个合法的‘东西’；
+        //var [name][age] = ["sth"][100];//错误的赋值
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
