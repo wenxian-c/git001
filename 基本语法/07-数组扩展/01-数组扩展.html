@@ -1,0 +1,65 @@
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Title</title>
+ 
+</head>
+<body>
+<div>div--01</div>
+<div>div--02</div>
+<div>div--04</div>
+<div>div--04</div>
+<div>div--05</div>
+
+    <script>
+        
+        //重点（全部记住）
+        /* 
+        1. from()：Array.from()方法用于将两类对象转为真正的数组：
+        （长得像数组）即类似数组的对象（array-like object）和
+        可遍历（iterable）的对象（包括ES6新增的数组结构Set和Map）。
+
+        2. 任何有length属性的对象和有遍历器接口（Symbol.iterator）,
+        都可以通过Array.from方法转为数组。
+        */
+        
+
+        //TODO step1:长得像数组
+        var divArr = document.querySelectorAll('div');
+        console.log(divArr);//NodeList(5)  （长得像数组）
+
+        var arr = [1, 2, 3, 4, 5];
+        console.log(arr);//Array(5)
+
+        var divArr2 = Array.from(divArr);
+        console.log(divArr2);
+
+        //forEach（遍历）
+        divArr2.forEach(function(p) {
+            console.log(p);
+        });
+
+        //带length属性对象
+        var obj = {length: 3};
+        var objArr = Array.from(obj);
+        console.log(objArr);
+
+        console.log('----------');
+
+        //arguments:获取调用方法时，传入的实参！
+        function sum() {
+            //arguments
+            console.log(arguments);
+            console.log(Array.from(arguments));
+        }
+        sum(1, 2, 3);
+
+       
+    </script>
+
+
+</body>
+</html>

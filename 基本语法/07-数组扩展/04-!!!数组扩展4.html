@@ -1,0 +1,108 @@
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Title</title>
+ 
+</head>
+<body>
+<ul>
+    <li>li-01</li>
+    <li>li-02</li>
+    <li>li-03</li>
+    <li>li-04</li>
+    <li>li-05</li>
+</ul>
+
+
+    <script>
+        
+        /* 
+
+        1. entries() 和 keys() : 
+        用于遍历数组 ，他们都返回一个遍历器对象。可以用for...of循环进行遍历，
+        唯一的区别是 keys()是对键名的遍历、entries()是对键值对的遍历。
+
+        2. filter(): 过滤元素
+
+        3. map(): 打散每个数据进行操作
+
+        区别：filter 会新生成一个数组，不影响原数组！map 是对当前数组进行修改！
+
+         */
+
+         //TODO step1: entries() 和 keys()
+         let arr = ['sxt', 'shanghai'];
+
+         var arrKeys = arr.keys();
+         console.log(arrKeys);
+         for(let key of arrKeys) {
+            console.log(key);
+         }
+
+
+         let arrEntries = arr.entries();
+         console.log(arrEntries);
+         for(let key of arrEntries) {
+            console.log(key);
+         }
+
+         //Iterator 迭代器，只能遍历一次！
+         let arrEntries2 = arr.entries();
+         for(let [key, value] of arrEntries2) {
+            console.log([key, value]);
+         }
+
+
+         console.log('--------');
+
+
+         //TODO step2 : filter()
+         var arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+         //选取大于5的数字
+         var arr1Filter = arr1.filter(function(element, index) { 
+            console.log(element, index);
+            //return element > 5;
+            return index % 2 == 0;
+         })
+         console.log(arr1Filter);
+
+
+         console.log('--------');
+
+
+         //TODO step3 : map()
+         var arr2 = [1, 2, 3];
+         var arr2Map = arr2.map(function(e, i) {
+             console.log(e, i);
+             return '<li>'+e+'</li>';
+         })
+         console.log(arr2Map);
+
+         //实例
+         let lis = [...document.querySelectorAll('li')];//扩展运算符
+         lis.map(function(e, i) {
+            //奇数列添加背景颜色
+            //console.log(e, i);
+            if (i % 2 === 1) {
+                e.style.backgroundColor = '#f00';
+                //操作显示文本
+                e.innerHTML += '奇数列'
+            }
+         })
+
+
+
+
+
+
+        
+
+       
+    </script>
+
+
+</body>
+</html>
