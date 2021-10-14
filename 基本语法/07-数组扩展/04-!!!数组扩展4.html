@@ -31,7 +31,10 @@
         区别：filter 会新生成一个数组，不影响原数组！map 是对当前数组进行修改！
         
         4. reduce()：汇总
-        
+
+        5. for...in 和 for...of
+        区别：for...in 遍历下标，for...of 遍历内容；
+
          */
 
          //TODO step1: entries() 和 keys()
@@ -57,7 +60,7 @@
          }
 
 
-         console.log('--------');
+         console.log('1--------');
 
 
          //TODO step2 : filter()
@@ -71,7 +74,7 @@
          console.log(arr1Filter);
 
 
-         console.log('--------');
+         console.log('2--------');
 
 
          //TODO step3 : map()
@@ -95,11 +98,46 @@
          })
 
 
+         console.log('3--------');
 
 
+         //TODO step4: reduce()汇总
+         /* 
+         每一个值汇总 
+         1. previous 上一次计算结果
+         2. current 当前值
+         3. index 当前值的索引
+         4. array 当前数组
+         */
+         var sum = [1, 2, 3, 4].reduce(function(previous, current, index, array) {
+            console.log(previous, current, index, array);
+            return previous * current;
+         });
 
 
-        
+         console.log('4--------');
+
+
+         //TODO step5: for...in 和 for...of
+         var obj = {
+             name : 'Tim',
+             age : 12,
+             love : 'coding'
+         };
+         var att = [2, 3, 4, 5];
+         
+         for(let key in obj) {
+             console.log(key, obj[key]);
+         }
+
+         for(let key in att) {
+             console.log(key, att[key]);
+         }
+         
+         for(let value of att) {
+             console.log(value);
+         }
+
 
        
     </script>

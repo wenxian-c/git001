@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Title</title>
+    <script>
+        
+        //交集、并集、差集
+
+        let a = new Set([1, 2, 3]);
+        let b = new Set([4, 3, 2]);
+
+
+        console.log([...a].concat([...b])); //concat()连接  [1, 2, 3, 4, 3, 2]
+
+        //并集 
+        let union = new Set([...a, ...b]);
+        console.log(union);
+
+        //交集
+        let intersect = new Set([...a].filter(function(v) {
+            return b.has(v);
+        }));
+        console.log(intersect);
+
+        //差集
+        let difference = new Set([...a].filter(function(v) {
+            return !b.has(v);
+        }));
+        console.log(difference);
+
+
+        //交集
+        let intersect = new Set([...a].filter(x => b.has(x))); //set {2, 3}
+        /* 
+        箭头函数：
+                / 当成函数来使用， function sum(a, b) {return a + b;}  ->  通过 => 箭头函数
+        function 
+                \ 当成类对象来使用，function Ball(){}  ->  通过 class
+        */
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

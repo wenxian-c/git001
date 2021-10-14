@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Title</title>
+    <script>
+        
+        /* 
+        函数扩展：
+        1. 默认值
+        2. length: 预期传入参数的个数,一般来说对函数指定默认值都是放在最后的参数里面！！
+        */
+
+        //TODO step1: 默认值
+        function show(a=1, b=2) {
+            console.log(a, b);
+        }
+        show(3); //3 2
+
+
+        //TODO step2：length
+        function sum(a=1, b=2, c=3) {
+            return a + b + c;
+        }
+        console.log(sum.length); // 0
+
+        function sum2(a, b=1, c) {
+            return a + b + c;
+        }
+        /* 
+        预期传入参数，从前往后数，碰到第一个默认值就停止！以后参数不再计数 
+        */
+        console.log('预期传入的参数值', sum2.length); // 1
+
+
+        console.log('----------');
+
+
+        var a = 1;
+        function f(a, b = a) {
+            console.log(a);
+        }
+        //调用时，由于函数作用域内部的变量a已经生成，所以b等于参数a，而不是等于全局变量a。
+        f(2); //2
+
+        var a = 111;
+        function f2(b = a) {
+            let a = 2;
+            console.log(b);
+        }
+        //调用时，b的默认值变量a尚未在函数内部生成，所以a指向全局变量。
+        f2(); //111
+
+        var x = 1;
+        function foo(x = x) { //就近原则获取自己
+        }
+        foo(); //Cannot access 'x' before initialization
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

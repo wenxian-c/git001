@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Title</title>
+    <script>
+        
+        /* 
+        函数扩展：
+        1. 默认值
+
+        2. length: 预期传入参数的个数,一般来说对函数指定默认值都是放在最后的参数里面！！
+
+
+        3. 默认参数作用域：
+        如果参数默认值是一个变量，则该变量所处的作用域，与其他变量的作用域规则是一样的，
+        即先是当前函数的作用域，然后才是全局作用域。
+
+        4. rest 参数：rest参数搭配的变量是一个数组，该变量将多余的参数放入数组中。
+        注意：（即只能是最后一个参数），否则会报错。
+        */
+
+        function sum(a, b) {
+            return a + b;
+        }
+        console.log(sum(1, 2)); //3
+        console.log(sum(1, 2, 3, 4, 5, 6)); //3
+
+        //ES5: arguments 对象
+        //获取调用方法时传入的所有实参
+        function sum2() {
+            console.log(arguments);
+            var result = 0;
+            for(let i = 0; i < arguments.length; i++) {
+                result += arguments[i];
+            }
+            return result;
+        }
+        console.log(sum2(1, 2, 3, 4, 5, 6)); //21
+
+
+        //ES6 改造版
+        function sum3(str, ...arg) {
+            //console.log(str, arg);
+            var result = 0;
+            for(let i = 0; i < arg.length; i++) {
+                result += arg[i];
+            }
+            return str + result;
+        }
+        console.log(sum3('字符串求和：', 1,2,3,4,5,6));
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

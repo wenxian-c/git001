@@ -1,0 +1,113 @@
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Title</title>
+ 
+</head>
+<body>
+    <script>
+        
+        /* 
+        Map对象
+        1. 回顾：Object
+
+        2. 操作Map
+        a)、创建：new Map()
+        b)、设置：map.set(k, v), 不能用 map[k] = v;
+        c)、获取：map.get(k)
+        d)、查找键是否存在 map.has(k)
+        e)、删除键：map.delete(k)
+        f)、清空：clear()
+        h)、大小：size属性
+
+         */
+
+
+        //TODO step1: 回顾：Object
+        var obj = {
+             'name' : 'hello Kitty',
+             age : 10,
+             "12" : 'code'
+        }
+        console.log(obj['name'], obj['age'], obj[12]);
+
+        //函数对象
+        var f = function() {};
+
+
+        //TODO step2: 操作Map  
+        //创建：new Map()
+        var map = new Map();
+        //设置：map.set(k, v), 不能用 map[k] = v;
+        map.set(f, ['Hello', 12, 'abc']);
+        console.log(map.size);
+        //获取：map.get(k)
+        console.log(map.get(f));
+        //查找键是否存在 map.has(k)
+        console.log(map.has(f));
+        //删除键：map.delete(k)
+        map.delete(f);
+        //大小：size属性
+        console.log(map.size); 
+        //清空：clear()
+        map.clear();
+        console.log(map.size);
+        
+
+        console.log('----------')
+
+
+        var arr = [1, 2, 3];
+        var map2 = new Map();
+        map2.set(arr, '数组作为key');
+        console.log(map2.get(arr));
+
+
+        console.log('----------')
+
+
+        
+        /* 
+        遍历
+        1. for...of
+        */
+        var map3 = new Map();
+        map3.set('1', 'li-1');
+        map3.set('2', 'li-2');
+        map3.set('3', 'li-3');
+
+        for (let obj of map3) {
+            console.log(obj);
+        }
+
+        // key value
+        for (let [key, value] of map3) {
+            console.log([key, value]);
+        }
+
+        // key index
+        map3.forEach(function(value, index) {
+            console.log(value, index);
+        })
+
+        console.log('----------')
+
+        for (let key of map3.keys()) {
+            console.log(key);
+        }
+
+        for (let [key, value] of map3.entries()) {
+            console.log([key, value]);
+        }
+
+
+
+
+    </script>
+
+
+</body>
+</html>
