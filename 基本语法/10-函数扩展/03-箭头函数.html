@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Title</title>
+    <script>
+        
+        /* 
+        箭头函数：基本形成()=> {...}
+        */
+
+        //普通函数
+        function m1(x) {
+            return x + 1;
+        }
+
+        //箭头函数
+        let m2 = (x) => {x + 1};
+
+        //箭头函数-简洁写法
+        let m3 = x => x + 1;
+
+        console.log(m1(1)); //2
+        console.log(m1(1)); //2
+        console.log(m1(1)); //2
+
+        /* 
+        使用规则：
+        1. 在只有一个形参时可以省略括号，其他情况不可以省略！！
+        2. 在只有一行，并且把这行的结果返回时，可以省略return！！
+        3. 在只有一行代码时，可以省略花括号；
+        */
+
+        //TODO step1 : 省略括号
+        function f1() {
+            return 'hello';
+        }
+        let f11 = () => {return 'hello';}
+
+        function f2(x) {
+            return 'hello' + x;
+        }
+        let f22 = x => {return 'hello' + x;}
+
+        function f3(x, y) {
+            return 'hello' + x;
+        }
+        let f33 = (x, y) => {return 'hello' + x;}
+
+
+        //TODO step2 : 省略return
+        function f4(x) {
+            return x + 2;
+        }
+        let f44 = x => {return x + 2;}
+        let f45 = x => x + 2;
+
+        function f5(x) {
+            x += 100;
+            return x + 2;
+        }
+        //TODO step3 : 无法省略{}
+        let f55 = x => {
+            x += 100;
+            return x + 2;
+        };
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

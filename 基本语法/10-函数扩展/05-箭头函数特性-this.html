@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Title</title>
+
+</head>
+<body>
+<button>btn</button>
+    <script>
+        
+        /* 
+        箭头函数特性：
+        3. this 固定：在箭头函数中，this始终指向函数定义时的this，而非执行时，
+        因此this无法改变，箭头函数可以让this指向固定化。
+        */
+
+        //在箭头函数中，this始终指向函数定义时的this，而非执行时。
+        var x = 1;
+        var fn = () => this.x;
+        var fn2 = function() {return this.x;};
+
+        var o = {
+            x : 10,
+            test : fn,
+            test2 : fn2
+        };
+
+        console.log(o.test()); //1
+        console.log(o.test2()); //10
+
+        //apply
+        console.log(o.test2.apply({x : 99})); //99
+        console.log(o.test.apply({x : 99})); //1
+
+
+        /* 
+        点击按钮：1秒之后打印DOM结构
+        */
+        var btn = document.querySelector('button');
+        btn.onclick = function() {
+            /* window.setTimeout(function(){
+                console.log(this);
+            }, 1000); */
+
+            console.log(this);
+
+            //1. 使用箭头函数
+            //window.setTimeout(() => console.log(this), 1000);
+
+            //2. 使用bind
+            /* window.setTimeout(function(){
+                console.log(this);
+            }.bind(this), 1000); */
+
+            //3. 使用缓存this
+            var _this = this;
+            window.setTimeout(function(){
+                console.log(_this);
+            }, 1000);
+
+        }
+
+
+    </script>
+</body>
+</html>

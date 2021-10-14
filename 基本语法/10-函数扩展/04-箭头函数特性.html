@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Title</title>
+    <script>
+        
+        /* 
+        箭头函数特性：
+        1. arguments不被支持
+        2. 不能被new
+        */
+
+        //TODO step1：arguments不被支持
+        let f1 = () => {console.log(arguments);}
+        //f1(1, 2, 3, 4); //rguments is not definedat f1
+
+        var Person = function (name, age) {
+            this.name = name;
+            this.age = age;
+        }
+        var p1 = new Person('Tom', 12);
+        console.log(p1);
+
+        //TODO step2：不能被new
+        var Cat = (name, age) => {
+            this.name = name;
+            this.age = age;
+        };
+        var c1 = new Cat('Kitty', 3); //Cat is not a constructor
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
